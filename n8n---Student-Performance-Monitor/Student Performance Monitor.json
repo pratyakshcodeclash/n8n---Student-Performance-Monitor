@@ -1,0 +1,597 @@
+{
+  "name": "Student Performance Monitor",
+  "nodes": [
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1A_aEqGwCofS24akClTCjsmcRFfE6Ah91JTSlvJjBkv4",
+          "mode": "list",
+          "cachedResultName": "Stu_Att",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1A_aEqGwCofS24akClTCjsmcRFfE6Ah91JTSlvJjBkv4/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1A_aEqGwCofS24akClTCjsmcRFfE6Ah91JTSlvJjBkv4/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        -384,
+        256
+      ],
+      "id": "aaa7e740-655b-4899-8700-3bd7229b08d1",
+      "name": "Get row(s) in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Gx05AIvuZsn4fUL8",
+          "name": "Google Sheets account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "d297f5d8-d725-422d-bdad-4b5cebee5567",
+              "leftValue": "={{ $json.Course1 }}",
+              "rightValue": 75,
+              "operator": {
+                "type": "number",
+                "operation": "lt"
+              }
+            },
+            {
+              "id": "8be93203-553d-4227-b580-a20b5b8b3114",
+              "leftValue": "={{ $json.Course2 }}",
+              "rightValue": 75,
+              "operator": {
+                "type": "number",
+                "operation": "lt"
+              }
+            },
+            {
+              "id": "553a360e-aac1-44f4-9500-8c1ae3de3e01",
+              "leftValue": "={{ $json.Course3 }}",
+              "rightValue": 75,
+              "operator": {
+                "type": "number",
+                "operation": "lt"
+              }
+            },
+            {
+              "id": "fb56c057-d6e9-47f1-964b-fa694af9847a",
+              "leftValue": "={{ $json.Course4 }}",
+              "rightValue": 75,
+              "operator": {
+                "type": "number",
+                "operation": "lt"
+              }
+            },
+            {
+              "id": "6bc011c7-e0dc-4d82-9559-b487f985e716",
+              "leftValue": "={{ $json.Course5 }}",
+              "rightValue": 75,
+              "operator": {
+                "type": "number",
+                "operation": "lt"
+              }
+            },
+            {
+              "id": "1ed05a7a-d4ef-4e16-a543-f5ae36b963c6",
+              "leftValue": "={{ $json.Total_attendance }}",
+              "rightValue": 75,
+              "operator": {
+                "type": "number",
+                "operation": "lt"
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.2,
+      "position": [
+        -144,
+        256
+      ],
+      "id": "77ce5698-673e-44f9-8606-8d1a63864856",
+      "name": "Filter"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1SXxAaptGE98uwUD3mIXUBBGiZRUCB6lSl2Dhcq1p7gY",
+          "mode": "list",
+          "cachedResultName": "Stu_Score",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1SXxAaptGE98uwUD3mIXUBBGiZRUCB6lSl2Dhcq1p7gY/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1SXxAaptGE98uwUD3mIXUBBGiZRUCB6lSl2Dhcq1p7gY/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        -384,
+        -400
+      ],
+      "id": "514c3afc-8bdd-4dc9-a187-a3cd98bdbb2d",
+      "name": "Get row(s) in sheet1",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Gx05AIvuZsn4fUL8",
+          "name": "Google Sheets account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "ee7e6c63-3b9f-4c61-821b-91f05336f4ce",
+              "leftValue": "={{ $json.Course1 }}",
+              "rightValue": 40,
+              "operator": {
+                "type": "number",
+                "operation": "lt"
+              }
+            },
+            {
+              "id": "13e0708e-baff-402c-ad80-8c55ed07f116",
+              "leftValue": "={{ $json.Course2 }}",
+              "rightValue": 40,
+              "operator": {
+                "type": "number",
+                "operation": "lt"
+              }
+            },
+            {
+              "id": "b128289d-a722-4895-9865-871347d2ebeb",
+              "leftValue": "={{ $json.Course3 }}",
+              "rightValue": 40,
+              "operator": {
+                "type": "number",
+                "operation": "lt"
+              }
+            },
+            {
+              "id": "44de2d38-ac4d-4380-8798-d0364d00ab87",
+              "leftValue": "={{ $json.Course4 }}",
+              "rightValue": 40,
+              "operator": {
+                "type": "number",
+                "operation": "lt"
+              }
+            },
+            {
+              "id": "b4b444fc-bdcf-47c7-9f07-947c2b828f8f",
+              "leftValue": "={{ $json.Course5 }}",
+              "rightValue": 40,
+              "operator": {
+                "type": "number",
+                "operation": "lt"
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.2,
+      "position": [
+        -144,
+        -400
+      ],
+      "id": "eafaf28b-e357-42da-baf3-fd765a8abfcf",
+      "name": "Filter1"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1obO-GQeTbFOaNLMozh0s8MsdeZxCq_hRmncy9TJ8iok",
+          "mode": "list",
+          "cachedResultName": "Stu_Rec",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1obO-GQeTbFOaNLMozh0s8MsdeZxCq_hRmncy9TJ8iok/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1obO-GQeTbFOaNLMozh0s8MsdeZxCq_hRmncy9TJ8iok/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        -384,
+        -64
+      ],
+      "id": "95bb79c5-f2a8-48a5-bdff-2c2cf1956b51",
+      "name": "Get row(s) in sheet2",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Gx05AIvuZsn4fUL8",
+          "name": "Google Sheets account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "advanced": true,
+        "mergeByFields": {
+          "values": [
+            {
+              "field1": "RollNo",
+              "field2": "RollNo"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        80,
+        -256
+      ],
+      "id": "e26d25b4-650e-4fb5-bfe5-01b3a6c0a2f3",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "fieldsToMatchString": "RollNo",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        80,
+        128
+      ],
+      "id": "14cd0f8d-4f69-49b1-a250-ecaba19e2788",
+      "name": "Merge1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "0139daff-d946-4b58-a211-c87337b6562b",
+              "name": "RollNo",
+              "value": "={{ $json.RollNo }}",
+              "type": "number"
+            },
+            {
+              "id": "2ad3ec16-bd9a-438e-9e32-0b4fd52580c7",
+              "name": "Name",
+              "value": "={{ $json.Name }}",
+              "type": "string"
+            },
+            {
+              "id": "7b311781-c26d-4028-b7e9-b1981de4ec04",
+              "name": "contact",
+              "value": "={{ $json.contact }}",
+              "type": "string"
+            },
+            {
+              "id": "bd6c828f-0490-4f1e-8757-ce07dc153aed",
+              "name": "Reason",
+              "value": "Low Score",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        304,
+        -256
+      ],
+      "id": "d4b42d92-9a93-464b-99f0-a050f93fc871",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "f8de6dfc-b06a-464a-bc99-e4338070359f",
+              "name": "RollNo",
+              "value": "={{ $json.RollNo }}",
+              "type": "number"
+            },
+            {
+              "id": "7a9814e5-0c54-4644-a4d1-34c7d4b6f96f",
+              "name": "Name",
+              "value": "={{ $json.Name }}",
+              "type": "string"
+            },
+            {
+              "id": "b8c8b18a-a313-4462-9227-fba3712d2932",
+              "name": "contact",
+              "value": "={{ $json.contact }}",
+              "type": "number"
+            },
+            {
+              "id": "5602de69-91df-4eba-8032-f24a9e40936f",
+              "name": "Reason",
+              "value": "Low Attendance",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        320,
+        128
+      ],
+      "id": "983954fa-f751-4114-b9e3-2044fbce29b2",
+      "name": "Edit Fields1"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -832,
+        -64
+      ],
+      "id": "0b4a18ca-a460-49e9-b6ae-d1fc0f193745",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        496,
+        -64
+      ],
+      "id": "be842d86-cee5-42e4-a4b3-1a3cbd35b6ce",
+      "name": "Merge2"
+    },
+    {
+      "parameters": {
+        "operation": "xls",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        704,
+        -64
+      ],
+      "id": "c10e8d00-33d0-4bfb-815d-5aae6f0ad355",
+      "name": "Convert to File2"
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "resource": "file",
+        "options": {
+          "channelId": "C098KKX6NHH"
+        }
+      },
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.3,
+      "position": [
+        928,
+        -64
+      ],
+      "id": "a0f843a6-6010-4adc-947b-bb4d4fd578d3",
+      "name": "Upload a file",
+      "webhookId": "3501e09f-f9d6-417b-b814-aa855b21252e",
+      "credentials": {
+        "slackOAuth2Api": {
+          "id": "yzQWSgjeJtARpWuR",
+          "name": "Slack account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Get row(s) in sheet": {
+      "main": [
+        [
+          {
+            "node": "Filter",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet1": {
+      "main": [
+        [
+          {
+            "node": "Filter1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter1": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet2": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          },
+          {
+            "node": "Merge1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter": {
+      "main": [
+        [
+          {
+            "node": "Merge1",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Merge2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge1": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "Merge2",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Get row(s) in sheet2",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge2": {
+      "main": [
+        [
+          {
+            "node": "Convert to File2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to File2": {
+      "main": [
+        [
+          {
+            "node": "Upload a file",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload a file": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "d2acd778-6a89-45ef-a0c1-d022a03b7618",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "764d48ede8f7bdcac509b9495d2efc333801c89fff21104383d9fad59df26ad8"
+  },
+  "id": "paWtvv9kKx5BARvM",
+  "tags": []
+}
